@@ -1,0 +1,52 @@
+version: '3'
+
+volumes:
+  wordpress_db:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${HOME}/data/wordpress
+      o: bind
+  mariadb:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${HOME}/data/mariadb
+      o: bind
+
+services:
+  nginx:
+    container_name: nginx
+    build: ./requirements/nginx
+    ports:
+      - "443:443"
+    volumes:
+      - wordpress_db:/var/www/html
+    networks:
+      - inception
+    depends_on:
+      - wordpress
+  wordpress:
+    container_name: wordpress
+    build: ./requirements/wordpress
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mariadb
+    volumes:
+      - wordpress_db:/var/www/html
+    networks:
+      - inception
+  mariadb:
+    container_name: mariadb
+    build: ./requirements/mariadb
+    ports:
+      - "3306:3306"
+    volumes:
+      - "mariadb:/var/lib/mysql"
+    networks:
+      - inception
+networks:
+  inception:
+    driver: bridge
+
