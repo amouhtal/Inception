@@ -33,7 +33,6 @@ RUN wp core download --allow-root
 COPY ./tools/script.sh .
 
 RUN chmod +x script.sh
-
 CMD ["./script.sh"]
 
 #service php7.3-fpm start && service mysql start && nginx -g 'daemon off;'

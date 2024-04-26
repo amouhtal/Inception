@@ -16,6 +16,7 @@ wp config create --dbname=wordpress --dbuser=amouhtal --dbpass=password --dbhost
 
 # Install WordPress
 wp core install --url=localhost --title=inception --admin_user=amouhtal --admin_password=password --admin_email=amouhtal@email.com --skip-email= --path='/var/www/html' --allow-root 
+RUN wp user create amouhtal_user amouhtal_user@email.com --role=author --user_pass=amouhtal_user_password --allow-root
 
 # Start PHP-FPM
 /usr/sbin/php-fpm7.3 -F -R
