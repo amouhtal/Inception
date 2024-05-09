@@ -1,3 +1,4 @@
 # Inception-
 
-<embed src="https://cdn.intra.42.fr/pdf/pdf/103030/en.subject.pdf" width="500" height="500">
+<object data="https://cdn.intra.42.fr/pdf/pdf/103030/en.subject.pdf" type="application/pdf" width="100%"> 
+</object>
