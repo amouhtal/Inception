@@ -1,4 +1,6 @@
 # INCEPTION 
+![alt text](https://github.com/amouhtal/Inception/blob/main/iception_diagram.png?raw=true)
+
 <pre> This project consists in having you set up an infrastructure composed of different
 services under specific rules. The whole project has to be done in a virtual machine. You
 have to use docker compose.<br/><br/></pre>
@@ -54,4 +56,3 @@ wil’s website.<br>
 - protocol.
 ```
 
-![alt text](https://github.com/amouhtal/Inception/blob/main/iception_diagram.png?raw=true)
