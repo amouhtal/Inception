@@ -1,4 +1,3 @@
 # Inception-
 
-<object data="/en.inception.pdf" type="application/pdf" width="100%"></object>
-<embed src="/en.inception.pdf" type="application/pdf">
+![alt text](https://github.com/amouhtal/Inception/blob/main/iception_diagram.png.png?raw=true)
