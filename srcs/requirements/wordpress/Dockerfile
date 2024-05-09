@@ -25,7 +25,7 @@ RUN mkdir -p /run/php/
 
 
 WORKDIR /var/www/html/
-# RUN chmod 755 /var/www/html && chown -R www-data:www-data /var/www/html
+RUN chmod 755 /var/www/html && chown -R www-data:www-data /var/www/html
 # wp core Downloads, installs, updates, and manages a WordPress installation.
 RUN wp core download --allow-root
 # RUN service mysql start

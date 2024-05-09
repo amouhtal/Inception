@@ -26,6 +26,7 @@ services:
       - inception
     depends_on:
       - wordpress
+    env_file: .env
   wordpress:
     container_name: wordpress
     build: ./requirements/wordpress
@@ -37,11 +38,13 @@ services:
       - wordpress_db:/var/www/html
     networks:
       - inception
+    env_file: .env
   mariadb:
     container_name: mariadb
     build: ./requirements/mariadb
     ports:
       - "3306:3306"
+    env_file: .env
     volumes:
       - "mariadb:/var/lib/mysql"
     networks:
