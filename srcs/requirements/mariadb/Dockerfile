@@ -1,17 +1,19 @@
-FROM debian:buster
+FROM debian:buster 
 
-# Install MariaDB
-
-RUN apt-get update && apt upgrade -y  && apt-get install -y \
+RUN apt update && apt install -y \
     mariadb-server \
-    mariadb-client
+    mariadb-client \
+    systemd \
+    default-mysql-server 
+
 
 RUN sed -i 's/bind-address/#bind-address/' /etc/mysql/mariadb.conf.d/50-server.cnf
 
-# Copy the configuration file
-COPY ./tools/script.sql .
-RUN chmod +x script.sql
 
-RUN service mysql start && mysql -u root < script.sql
+
+COPY ./conf/script.sh /tmp/
+RUN chmod +x /tmp/script.sh
+
 EXPOSE 3306
-CMD ["mysqld_safe"]
+
+CMD ["/tmp/script.sh"]

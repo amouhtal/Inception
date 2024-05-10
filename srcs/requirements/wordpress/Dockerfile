@@ -30,10 +30,10 @@ RUN chmod 755 /var/www/html && chown -R www-data:www-data /var/www/html
 RUN wp core download --allow-root
 # RUN service mysql start
 # RUN sleep 5
-COPY ./tools/script.sh .
+COPY ./tools/script.sh /tmp
 
-RUN chmod +x script.sh
-CMD ["./script.sh"]
+RUN chmod +x /tmp/script.sh
+CMD ["/tmp/script.sh"]
 
 #service php7.3-fpm start && service mysql start && nginx -g 'daemon off;'
 # CMD [ "service", "php7.3-fpm", "start", "&&", "service", "mysql", "start"]
