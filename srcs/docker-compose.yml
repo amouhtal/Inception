@@ -26,6 +26,8 @@ services:
       - inception
     depends_on:
       - wordpress
+    restart: always
+
     env_file: .env
   wordpress:
     container_name: wordpress
@@ -38,6 +40,7 @@ services:
       - wordpress_db:/var/www/html
     networks:
       - inception
+    restart: always
     env_file: .env
   mariadb:
     container_name: mariadb
@@ -49,6 +52,18 @@ services:
       - "mariadb:/var/lib/mysql"
     networks:
       - inception
+    restart: always
+  cadvisor:
+    container_name: cadvisor
+    build: ./requirements/bonus/cadvisor
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
 networks:
   inception:
     driver: bridge

@@ -8,16 +8,16 @@ echo "==> Setting up MariaDB database <=="
 
 mariadb << EOF
 
-CREATE DATABASE wordpress; 
-CREATE USER 'amouhtal'@'%' IDENTIFIED BY 'password'; 
-GRANT ALL PRIVILEGES ON wordpress.* TO 'amouhtal'@'%'; 
+CREATE DATABASE $DB_NAME; 
+CREATE USER '$DB_USER'@'%' IDENTIFIED BY '$DB_PASSWORD'; 
+GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'%'; 
 FLUSH PRIVILEGES;
 
 EOF
 
-# mariadb -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';"
+mariadb -e "ALTER USER '$DB_ROOT'@'localhost' IDENTIFIED BY '$DB_ROOT_PASSWORD';"
 
-mysqladmin -u root -p shutdown
+mysqladmin -u $DB_ROOT -p $DB_ROOT_PASSWORD shutdown
 
 echo "==> MariaDB database setup complete <=="
 
