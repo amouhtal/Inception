@@ -1,1 +1,3 @@
 /srcs/.gitignore
+/srcs/.env
+/srcs/requirements/portfolio/myport/portfolio/.vscode

@@ -53,6 +53,23 @@ services:
     networks:
       - inception
     restart: always
+  adminer:
+    container_name: adminer
+    build: ./requirements/bonus/adminer
+    ports:
+      - 8000:8000
+    networks:
+      - inception
+    restart: always
+  redis:
+    container_name: redis
+    build: ./requirements/bonus/redis
+    ports:
+      - 6379:6379
+    # depends_on:
+    #   - wordpress
+    networks:
+      - inception
   cadvisor:
     container_name: cadvisor
     build: ./requirements/bonus/cadvisor
