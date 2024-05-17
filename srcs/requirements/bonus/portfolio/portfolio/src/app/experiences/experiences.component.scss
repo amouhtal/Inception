@@ -1,0 +1,61 @@
+:host {
+  height: fit-content;
+  // height: min-content;
+  display: block;
+  position: relative;
+}
+.exp-1,
+.exp-2 {
+  transition: transform 0.9s ease-in-out;
+  transform: translateY(30%);
+  max-width: 420px;
+}
+.exp-show {
+  animation: fadeIn 0.9s ease-in-out;
+  transform: translateY(0%);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  :host {
+    height: 160vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :host {
+    height: fit-content;
+  }
+}
+
+.ocpImg {
+  transform: translateY(50%);
+}
+
+.ocp-banner {
+  background: linear-gradient(#166534, rgb(8, 144, 44));
+}
+
+.devaktus-banner {
+  background: linear-gradient(#170137, rgb(78, 5, 69));
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,139 @@
+<section class="bg-white dark:bg-gray-900">
+  <div class="mx-auto">
+    <div>
+      <!-- <p class="font-medium text-violet-500 dark:text-violet-400">Contact me</p> -->
+
+      <h1 class="protfolio-heading">Contact me</h1>
+
+      <p class="mt-3 text-primary-color dark:text-text-color-dark">
+        I'd love to hear from you. Please fill out this form or shoot me an
+        email.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+        <div>
+          <span
+            class="inline-block p-3 dark:bg-gray-800 shadow rounded-full w-12 h-12"
+          >
+            <i class="material-symbols-outlined icons text-2lg text-violet-400">
+              email
+            </i>
+            <!-- <span class="material-symbols-outlined"> home </span> -->
+          </span>
+
+          <h2 class="mt-4 text-base font-medium text-black dark:text-white">
+            Email
+          </h2>
+          <!-- <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+            Our friendly team is here to help.
+          </p> -->
+          <p class="mt-2 text-sm text-violet-500 dark:text-violet-400">
+            mouhtal.abderrahmane@gmail.com
+          </p>
+        </div>
+        <div>
+          <span
+            class="inline-block p-3 dark:bg-gray-800 shadow rounded-full w-12 h-12"
+          >
+            <i class="material-symbols-outlined icons text-2lg text-violet-400">
+              location_on
+            </i>
+          </span>
+
+          <h2 class="mt-4 text-base font-medium text-black dark:text-white">
+            Morroco, khouribga
+          </h2>
+          <!-- <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+            Come say hello at our office HQ.
+          </p>
+          <p class="mt-2 text-sm text-violet-500 dark:text-violet-400">
+            100 Smith Street Collingwood VIC 3066 AU
+          </p> -->
+        </div>
+
+        <div>
+          <span
+            class="inline-block p-3 dark:bg-gray-800 shadow rounded-full w-12 h-12"
+          >
+            <i class="material-symbols-outlined icons text-2lg text-violet-400">
+              phone_iphone
+            </i>
+          </span>
+
+          <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">
+            Phone
+          </h2>
+          <!-- <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+            Mon-Fri from 8am to 5pm.
+          </p> -->
+          <p class="mt-2 text-sm text-violet-500 dark:text-violet-400">
+            +212 (555) 000-0000
+          </p>
+        </div>
+      </div>
+
+      <div class="p-4 py-6 rounded-lg bg-gray-50 dark:bg-gray-800 md:p-8">
+        <form [formGroup]="form" action="javascript:void(0)" (submit)="send()">
+          <div class="-mx-2 md:items-center md:flex">
+            <div class="flex-1 px-2">
+              <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                >First Name</label
+              >
+              <input
+              formControlName="from_name"
+
+                type="text"
+                placeholder="John "
+                class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-violet-400 dark:focus:border-violet-400 focus:ring-violet-500 focus:outline-none focus:ring focus:ring-opacity-40"
+              />
+            </div>
+
+            <div class="flex-1 px-2 mt-4 md:mt-0">
+              <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+                >Last Name</label
+              >
+              <input
+                formControlName="from_lastname"
+                type="text"
+                placeholder="Doe"
+                class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-violet-500 dark:focus:border-violet-500 focus:ring-violet-500 focus:outline-none focus:ring focus:ring-opacity-40"
+              />
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Email address</label
+            >
+            <input
+              formControlName="from_email"
+              type="email"
+              placeholder="johndoe@example.com"
+              class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-violet-500 dark:focus:border-violet-500 focus:ring-violet-500 focus:outline-none focus:ring focus:ring-opacity-40"
+            />
+          </div>
+
+          <div class="w-full mt-4">
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Message</label
+            >
+            <textarea
+              formControlName="message"
+              class="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-violet-500 dark:focus:border-violet-500 focus:ring-violet-500 focus:outline-none focus:ring focus:ring-opacity-40"
+              placeholder="Message"
+            ></textarea>
+          </div>
+
+          <button
+          type="submit"
+            class="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-violet-500 rounded-lg hover:bg-violet-400 focus:outline-none focus:ring focus:ring-violet-300 focus:ring-opacity-50"
+          >
+            Send message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

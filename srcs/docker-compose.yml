@@ -27,7 +27,7 @@ services:
     depends_on:
       - wordpress
     restart: always
-
+    stop_grace_period: 1s
     env_file: .env
   wordpress:
     container_name: wordpress
@@ -42,11 +42,13 @@ services:
       - inception
     restart: always
     env_file: .env
+    stop_grace_period: 1s
   mariadb:
     container_name: mariadb
     build: ./requirements/mariadb
     ports:
       - "3306:3306"
+    stop_grace_period: 1s
     env_file: .env
     volumes:
       - "mariadb:/var/lib/mysql"
@@ -61,9 +63,11 @@ services:
     networks:
       - inception
     restart: always
+    stop_grace_period: 1s
   redis:
     container_name: redis
     build: ./requirements/bonus/redis
+    stop_grace_period: 1s
     ports:
       - 6379:6379
     # depends_on:
@@ -75,12 +79,18 @@ services:
     build: ./requirements/bonus/cadvisor
     ports:
       - "8080:8080"
+    stop_grace_period: 1s
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:ro
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
+  # portfolio:
+  #   container_name: portfolio
+  #   build: ./requirements/bonus/portfolio
+  #   ports:
+  #     - "4200:4200"
 networks:
   inception:
     driver: bridge

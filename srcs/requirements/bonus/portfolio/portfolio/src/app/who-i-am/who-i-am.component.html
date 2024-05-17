@@ -1,0 +1,84 @@
+<div
+  class="flex flex-col items-center md:flex-row md:justify-between w-[100%] relative"
+>
+  <div class="w-full h-fit min-h-[50%] flex flex-col justify-evenly md:w-[60%]
+  lg:w-[55%]
+  ">
+    <div class="my-2 relative flex items-center">
+      <span
+        class="topLine text-2xl md:text-5xl lg:text-5xl text-primary-color dark:text-text-color-dark"
+        >Hello</span
+      >
+      <img
+        id="greetingEmoji"
+        class="w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f44b.png"
+        alt=""
+      />
+    </div>
+
+    <h1
+      class="my-2 text-base md:text-lg lg:text-2xl text-primary-color dark:text-secondary-color"
+    >
+      I'm
+      <span
+        class="multiText text-base md:text-lg lg:text-4xl text-text-secondary-color"
+        id="typed-element"
+      ></span>
+    </h1>
+    <p
+      class="my-2 text-base font-medium tracking-tighter md:text-lg md:font-medium mg:tracking-wide  leading-8 md:leading-9 text-primary-color dark:text-secondary-color"
+    >
+      Expert in Angular & NestJS, crafting seamless user interfaces & efficient
+      server-side applications. Committed to delivering high-quality solutions
+      through collaborative and detail-oriented development.
+    </p>
+    <div class="my-2 btns flex justify-between items-center w-56">
+      <a href="">
+        <button
+          class="p-2 rounded text-center bg-button-color"
+          (click)="downloadCv()"
+        >
+          download CV
+        </button>
+      </a>
+      <a href="#contactME">
+        <button class="p-2 rounded text-center bg-button-color">hire me</button>
+      </a>
+    </div>
+    <div class="my-2 personnal-network flex justify-between w-36 md:w-44 h-12">
+      <a href="https://github.com/amouhtal" target="_blank" class="">
+        <fa-icon
+          [icon]="faGithub"
+          class="iconLinks icon text-3xl md:text-4xl"
+        ></fa-icon>
+      </a>
+      <a href="">
+        <fa-icon
+          [icon]="faLinkedin"
+          class="iconLinks icon text-3xl text-blue-600 md:text-4xl"
+        ></fa-icon>
+      </a>
+      <a href="">
+        <fa-icon
+          [icon]="faCodepen"
+          class="iconLinks icon text-3xl text-gray-400 md:text-4xl"
+        ></fa-icon>
+      </a>
+    </div>
+  </div>
+
+  <div
+    class="pic-container h-290 md:h-auto flex justify-center md:flex-grow md:self-stretch relative w-full md:w-[40%] lg:w-[45%] overflow-hidden"
+  >
+    <p
+      class="max-w-2xl mx-auto mt-5 text-3xl font-extrabold text-center text-transparent uppercase md:text-4xl lg:text-5xl bg-gradient-to-b from-white/70 bg-clip-text"
+    >
+      Abderrahmane Mouhtal
+    </p>
+    <img
+      class="profile-pic absolute bottom-0 mx-auto"
+      src="../../assets/IMG_1401.png"
+    />
+  </div>
+</div>

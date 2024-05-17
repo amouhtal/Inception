@@ -1,0 +1,54 @@
+
+
+h1 {
+  color: #fdfbff;
+}
+
+:host {
+}
+
+h2 {
+  // background-color: gray;
+}
+.card {
+  
+  position: relative;
+  height: 20vh;
+  background-color: #fdfbff;
+  color: #3d535f;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card:before {
+  content: "";
+  background-color: #7f00ff;
+  height: 20px;
+  width: 100%;
+}
+
+// .underlinee::after {
+//   content: "";
+
+//   background-color: #7f00ff;
+//   height: 5px;
+//   width: 101%;
+//   position: absolute;
+//   bottom: 2px;
+//   // left: 0;
+
+// }
+
+.expertise {
+  // height: 40vh;
+  background-color: #3d535f;
+}
+
+.col1 {
+  height: 100%;
+}

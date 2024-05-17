@@ -1,0 +1,52 @@
+<div class="flex flex-col h-full w-full">
+  <h2 class="protfolio-heading">Open Source Projects</h2>
+  <div class="projects-container h-full">
+    <div
+      class="grid justify-items-center gap-x-4 sm:grid-cols-2 md:gap-x-20 lg:grid-cols-3 xl:lg:grid-cols-4 w-full"
+    >
+      <a
+        *ngFor="let project of projects"
+        href="{{project.html_url}}"
+        class="p-4 mb-8 project-card shadow-15xl  hover:shadow-shadowHover   dark:shadow-gray-600 dark:hover:shadow-gray-400 dark:hover:bg-button-color flex flex-col justify-evenly w-full h-48 sm:w-72 lg:48"
+      >
+        <div class="head flex justify-evenly">
+          <i class="text-gray-900 dark:text-gray-50 material-icons icons"> bookmark </i>
+
+          <h2 class="font-mono text-xl text-heading-color dark:text-heading-color-dark">{{ project.name }}</h2>
+        </div>
+        <div class="body">
+          <p class="text-center text-base text-subheading-color dark:text-subheading-color-dark">
+            {{ project.description }}
+          </p>
+        </div>
+        <div class="footer flex justify-between items-center">
+          <div class="flex justify-evenly">
+            <div class="flex items-center justify-center">
+              <i class="text-sm text-blue-400 material-icons icons"> circle </i>
+              <h4 class="text-xs text-subheading-color dark:text-subheading-color-dark">{{ project.language }}</h4>
+            </div>
+            <div class="flex items-center justify-center">
+              <i class="text-base text-yellow-400 material-icons icons">
+                star
+              </i>
+              <h4 class="text-xs">{{ project.start_count }}</h4>
+            </div>
+          </div>
+          <div class="flex items-center justify-center">
+            <h4 class="text-xs text-paragraph-color dark:text-paragraph-color-dark">{{ project.size }}</h4>
+            <h4 class="text-xs text-paragraph-color dark:text-paragraph-color-dark">MB</h4>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <a
+    class="a_button self-center text-white cursor-pointer block mx-auto
+    text-decoration-none uppercase w-max p-3 rounded-md"
+    
+    href="https://github.com/amouhtal"
+    target="_blank"
+  >
+    MORE PROJECTS
+  </a>
+</div>

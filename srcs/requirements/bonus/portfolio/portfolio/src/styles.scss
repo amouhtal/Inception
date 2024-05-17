@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .protfolio-heading {
+    // text-3xl text-center md:text-start
+    @apply py-5 text-3xl text-center dark:text-white dark:bg-gray-900;
+  }
+
+  .navigation-nav-items {
+    @apply text-base lg:text-lg font-extralight  text-primary-color dark:text-secondary-color;
+  }
+
+  @screen md {
+    .protfolio-heading {
+      @apply text-start;
+    }
+  }
+
+  @screen lg {
+    .protfolio-heading {
+      @apply text-4xl;
+    }
+  }
+}
+
+// // navigation-nav-items
+// .navigation-nav-items {
+//   @apply text-xl font font-extrlight sm:text-2xl;
+// }
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap");
+
+*::after,
+*::before,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+html { 
+  
+}
+
+body {
+  max-width: 100vw;
+  min-width: 100vw;
+  overflow-x: hidden;
+}
