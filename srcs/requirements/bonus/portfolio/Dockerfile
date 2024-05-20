@@ -21,8 +21,10 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt-get install
 COPY ./portfolio .
 # RUN . ~/.nvm/nvm.sh && nvm use 18 &&  npm install -g @angular/cli && npm install 
 # RUN apt-get install npm -y
-RUN npm install -g @angular/cli@16.0.0
-RUN npm install
+# RUN npm install -g @angular/cli@16.0.0
+# RUN npm install
+RUN npm install angular-http-server -g
 # RUN npm install
 EXPOSE 4200
-CMD ["ng", "serve", "--host", "0.0.0.0"]
+# CMD ["ng", "serve", "--host", "0.0.0.0"]
+CMD [ "angular-http-server", "--path", "dist/portfolio", "-p", "4200"]

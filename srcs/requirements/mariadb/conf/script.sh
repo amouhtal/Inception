@@ -1,5 +1,14 @@
 #!bin/bash
 
+shutdown_mariadb() {
+    echo "==> Shutting down MariaDB server gracefully <=="
+    mysqladmin -u $DB_ROOT -p$DB_ROOT_PASSWORD shutdown
+}
+
+# Trap SIGTERM signal and call shutdown_mariadb function
+trap 'shutdown_mariadb' SIGTERM
+
+
 mysqld_safe &
 
 sleep 5

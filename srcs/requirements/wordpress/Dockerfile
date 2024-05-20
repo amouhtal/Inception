@@ -20,20 +20,15 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
 
-
 RUN mkdir -p /run/php/
-
 
 WORKDIR /var/www/html/
 RUN chmod 755 /var/www/html && chown -R www-data:www-data /var/www/html
-# wp core Downloads, installs, updates, and manages a WordPress installation.
 RUN wp core download --allow-root
-# RUN service mysql start
-# RUN sleep 5
 COPY ./tools/script.sh /tmp
-
 RUN chmod +x /tmp/script.sh
 CMD ["/tmp/script.sh"]
 
 #service php7.3-fpm start && service mysql start && nginx -g 'daemon off;'
 # CMD [ "service", "php7.3-fpm", "start", "&&", "service", "mysql", "start"]
+

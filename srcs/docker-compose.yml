@@ -86,11 +86,11 @@ services:
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
-  # portfolio:
-  #   container_name: portfolio
-  #   build: ./requirements/bonus/portfolio
-  #   ports:
-  #     - "4200:4200"
+  portfolio:
+    container_name: portfolio
+    build: ./requirements/bonus/portfolio
+    ports:
+      - "4200:4200"
 networks:
   inception:
     driver: bridge
