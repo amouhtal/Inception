@@ -8,6 +8,7 @@ RUN apt install -y openssl \
 
 # create a directory /etc/nginx/ssl and set the permissions to 700
 RUN mkdir -p /etc/nginx/ssl
+# 
 RUN chmod 700 /etc/nginx/ssl
 # generate a self-signed SSL certificate and key using the openssl command
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt -subj "/C=FR/ST=Paris/L=Paris/O=42/OU=42/CN=localhost"
@@ -16,5 +17,5 @@ COPY ./conf/nginx.conf /etc/nginx/conf.d/default.conf
 
 RUN echo "<html><body><marquee><h1>Hello World</h1></marquee></body></html>" > /var/www/html/index.html
 EXPOSE 443
-# run the nginx service in the foreground 
+# run the nginx service in the foreground
 CMD ["nginx", "-g", "daemon off;"]

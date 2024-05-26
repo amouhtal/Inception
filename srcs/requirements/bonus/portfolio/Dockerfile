@@ -11,8 +11,6 @@ WORKDIR /portfolio
 # EXPOSE 4200
 # CMD [ "node" , "index.js" ]
 
-
-
 RUN apt-get update && apt-get upgrade -y 
 RUN apt-get install curl -y
 RUN touch ~/.bashrc && chmod +x ~/.bashrc

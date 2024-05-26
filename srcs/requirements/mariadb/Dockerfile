@@ -6,12 +6,10 @@ RUN apt update && apt install -y \
 
 RUN sed -i 's/bind-address/#bind-address/' /etc/mysql/mariadb.conf.d/50-server.cnf
 
-
-
-COPY ./conf/script.sh /tmp/
+COPY ./tools/script.sh /tmp/
 
 RUN chmod +x /tmp/script.sh
 
 EXPOSE 3306
 
-CMD ["/tmp/script.sh"]
+CMD ["bash","/tmp/script.sh"]

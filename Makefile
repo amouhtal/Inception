@@ -1,8 +1,7 @@
 all:
-	rm -rf $${HOME}/data
 	if [ ! -d $${HOME}/data/wordpress ]; then mkdir -p $${HOME}/data/wordpress; fi
 	if [ ! -d $${HOME}/data/mariadb ]; then mkdir -p $${HOME}/data/mariadb; fi	
-	docker-compose -f ./srcs/docker-compose.yml build --no-cache
+	docker-compose -f ./srcs/docker-compose.yml build 
 	docker-compose -f ./srcs/docker-compose.yml up 
 
 clean:
